@@ -1,0 +1,47 @@
+<mvc:View controllerName="com.smod.employeelist.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+           <l:VerticalLayout
+				width="100%"
+				class="gridWrapper">
+		        <l:Grid
+                    defaultSpan="XL3 L3 M4 S12" content="{/Employees}">
+                    <l:content>
+                        <f:Card   width="100%">
+		                    <f:header>
+				                <card:Header
+					                    title="{FirstName} {LastName}"
+					                    subtitle="{Title}"
+					                    iconSrc="{path:'Photo', formatter: '.convertImagePath'}" displayShape="Circle"/>
+			                </f:header>
+			         <f:content>
+				            <VBox
+					            height="115px"
+					            class="sapUiSmallMarginTop"
+                                >
+						            <Text span= "XL11 L10 M10 S12" class="sapUiSmallMarginTop" text="Hire Date: { path:'HireDate', 	type: 'sap.ui.model.type.DateTime',
+				                                formatOptions: {
+					                            pattern: 'dd/MM/YYYY'
+				                                }}"  > 
+                                    </Text>
+						            <Text class="sapUiMediumMarginTop" text="Birth Date: { path:'BirthDate', 	type: 'sap.ui.model.type.DateTime',
+				                                formatOptions: {
+					                            pattern: 'dd/MM/YYYY'
+				                                }}"  >
+                                    </Text>
+					           
+				            </VBox>
+			        </f:content>
+		</f:Card>
+                    </l:content>
+                </l:Grid>
+		</l:VerticalLayout>
+        </content >
+    </Page>
+</mvc:View>
